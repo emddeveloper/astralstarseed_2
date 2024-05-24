@@ -1,0 +1,33 @@
+{
+	"menu": [{
+		"main": "Home",
+		"link": "home",
+		"subMenu": {
+			"submenuitem": [{
+				"submenuitemname": "Home-1",
+				"link": "home-1"
+			}, {
+				"submenuitemname": "Home-2",
+				"link": "home-2"
+			}, {
+				"submenuitemname": "Home-3",
+				"link": "home-3"
+			}]
+		}
+	}, {
+		"main": "About",
+		"link": "about",
+		"subMenu": {
+			"submenuitem": [{
+				"submenuitemname": "About-1",
+				"link": "about-1"
+			}, {
+				"submenuitemname": "About-2",
+				"link": "about-2"
+			}, {
+				"submenuitemname": "About-3",
+				"link": "about-3"
+			}]
+		}
+	}]
+}

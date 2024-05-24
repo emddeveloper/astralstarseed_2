@@ -1,0 +1,141 @@
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preload-content">
+      <div id="original-load"></div>
+    </div>
+  </div>
+
+  <!-- Subscribe Modal -->
+  <div class="subscribe-newsletter-area">
+    <div class="modal fade" id="subsModal" tabindex="-1" role="dialog" aria-labelledby="subsModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div class="modal-body">
+            <h5 class="title" ng-hide="sessionResponse.mailsent || sessionResponse.error">Book your session.</h5>
+            <h2 ng-show="sessionResponse.mailsent" class="text-success" style="font-size:15px">{{sessionResponse.msg}}</h2>
+              <h2 ng-show="sessionResponse.error" class="text-danger"  style="font-size:15px">{{sessionResponse.msg}}</h2>
+              <div ng-show="sessionResponse.mailsent || sessionResponse.error" class="text-center">
+              <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
+          </div>
+            <form class="newsletterForm" ng-hide="sessionResponse.mailsent || sessionResponse.error">
+              <input type="email" name="email" id="subscribesForm2" placeholder="Your e-mail here" ng-model="sessionBookingParams.email"/>
+              <input type="number" name="phone" id="subscribesForm3" placeholder="Your mobile here" ng-model="sessionBookingParams.phone"/>
+              <button type="submit" class="btn original-btn" ng-click="booksession()" ng-disabled="!(!(sessionBookingParams.email==null||sessionBookingParams.email=='') &&
+              !(sessionBookingParams.phone==null||sessionBookingParams.phone==''))">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- ##### Header Area Start ##### -->
+ <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row single-blog-area blog-style-2 text-center mb-20 color-3">
+            <header class="header-area">
+              <div class="col-12">
+                <div class="row header-box">
+                  <div class="col-xs-12 col-md-6">
+                    <div class="row">
+                      <a href="#/" class="original-logo"><img src="astralstartseed_blackbox/images/main-logo.jpg" alt="" /><span class="logo-text">Lightworkers</span></a>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <div class="row contact-wrapper">
+                      <!-- Breaking News Area -->
+                      <div class="col-12">
+                        <div class="breaking-news-area d-none">
+                          <div id="breakingNewsTicker" class="ticker">
+                            <ul>
+                              <li><a href="#">Welcome !</a></li>
+                              <li><a href="#">Hello Gaust!</a></li>
+                              <li><a href="#">How can I help you?</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Top Social Area -->
+                      <div class="col-12">
+                        <div class="top-social-area">
+                          <a href="https://www.instagram.com/lightworkerindigo/" data-toggle="tooltip" data-placement="bottom" title="instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                          <a href="https://www.facebook.com/astralstarseed/" data-toggle="tooltip" data-placement="bottom" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                          <a data-toggle="tooltip" data-placement="bottom" title="whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                          <a href="https://www.facebook.com/Lightworkers-Candles-109367093844673/" target="_blank" title="Hand made fragrant natural soy wax candles"><img src="astralstartseed_blackbox/images/candle.png" class="candle-icon" /></a>
+                          <a href="https://www.etsy.com/shop/LightworkersStore" data-toggle="tooltip" data-placement="bottom" title="Online Store Easy to Checkout" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                      <!-- contact text starts here -->
+                      <div class="col-12">
+                        <div class="contact-text-box row">
+                          <dl>
+                            <dt>Mobile</dt>
+                            <dd>:&nbsp; <a href="tel:{{mobile1}}">{{mobile1}}</a></dd>
+                            <!-- <dt>Whatsapp</dt>
+                                                      <dd>:&nbsp; <a href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regurding Lightworker"
+                                                              target="_blank">{{whatsapp1}}</a></dd> -->
+                            <dt>Email</dt>
+                            <dd>:&nbsp;&nbsp;<a href="mailto:{{email1}}?Subject=Hello%20I%20Want%20To%20Conatct%20With%20You" target="_top">{{email1}}</a></dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Logo Area -->
+              <!-- Nav Area -->
+              <div class="original-nav-area" id="stickyNav-1">
+                <div class="classy-nav-container breakpoint-off">
+                  <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between">
+                      <!-- Subscribe btn -->
+                      <div class="subscribe-btn">
+                        <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">BOOK SESSIONS</a>
+                      </div>
+
+                      <!-- Navbar Toggler -->
+                      <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                      </div>
+
+                      <!-- Menu -->
+                      <div class="classy-menu" id="originalNav">
+                        <!-- close btn -->
+                        <div class="classycloseIcon">
+                          <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                          <ul>
+                            <li><a routerLink="/" ng-class="{'active': home}">Home</a></li>
+                            <li><a routerLink="tarot">Tarot</a></li>
+                            <li><a href="reiki" ng-class="{'active': reiki}" ng-click="activeReiki()">Reiki</a></li>
+                            <li><a href="numerology" ng-class="{'active': numerology}" ng-click="activeNumerology()">Numerology </a></li>
+                            <li><a href="runes" ng-class="{'active': runes}" ng-click="activeRunes()">Runes</a></li>
+                            <li><a href="angel" ng-class="{'active': angel}" ng-click="activeAngel()">Angel Therapy</a></li>
+                            <!--<li ><a href="meditation-candle" ng-class="{'active': meditationCandle}" ng-click="activemeditationCandle()">Meditation Candle</a></li>-->
+                            <li><a href="aboutus" ng-class="{'active': aboutus}" ng-click="activeAboutus()">About Us</a></li>
+                            <li><a href="contact-us" ng-class="{'active': contact}" ng-click="activeContact()">Contact Us</a></li>
+                            <li><a href="payment" ng-class="{'active': payment}" ng-click="activePayment()">Payments</a></li>
+                            <!-- <li><a href="#!faq" ng-class="{'active': faq}" ng-click="activefaq()">FAQ</a></li> -->
+                          </ul>
+                        </div>
+                        <!-- Nav End -->
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ##### Cool Facts Area Start ##### -->
+  <h1 class="m-line">Tarot readers in kolkata,Best reiki treatments in kolkata, Runes Reading, Angel Therapy, Lightworkers</h1>

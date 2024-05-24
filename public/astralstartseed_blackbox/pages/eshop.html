@@ -1,0 +1,110 @@
+<div class="text-desc-contain cool-facts-area section-padding-20-0" ng-init="activemeditationCandle()">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row text-center mb-20 color-3 padding-25">
+                    <!-- Blog Content -->
+                    <div class="single-blog-content">
+                     <div class="line"></div>
+                     <h1 class="m-line text-center">Meditation Candles online, Best Candles for Meditation</h1>
+                    <h2>Buy Best Meditation Candles</h2>
+                    <p class="text-justify w-text">
+                        Candles have been a part of meditation practices for centuries, some people even use them as their focal point for meditation. A candle can help you create a special meditation space and atmosphere or it can be used to enhance your meditation through aromatherapy. Since candles are often low cost and easy to buy at a variety of stores, they are a great option to add to your meditation routine.
+                    </p>
+                    <div class="call-box">
+                    <p>Need help just Call us : <a href="tel:{{mobile1}}">{{mobile1}}</a>
+                    </p>
+                    <p>Need help just Whatsapp us :  <a href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi Lightworkers Team I want to contact with you regarding MEDITATION CANDLE details" target="_blank">{{whatsapp1}}</a>
+                    </p>
+                  </div>
+                  </div>  
+                  <section class="card">
+                    <div class="row">
+                            <div class="col-sm-4" ng-repeat="x in candles">
+                              <div class="card-section">
+                                 <div class="card-section-image">
+                                 <a href="#">
+                                   <img ng-src="../images/{{x.image}}" class="img-fluid">
+                                 </a>
+                                 <div class="card-purchase">
+                                    <a>From ₹79</a>
+                                 </div>
+                                 </div>
+                                 <div class="card-desc">
+                                   <div class="title">
+                                   <h3>{{x.name}}</h3>
+                                   <p class="desc text-center">{{x.desc}}</p>
+                                   </div>
+                                   <div class="card-info">
+                                   <ul class="list-unstyle">
+                                    
+                                   </ul>
+                                   <a href="{{x.url}}" target="_blank" class="cart_btn btn btn-dark">BUY NOW</a>
+                                   </div>
+                                 </div>
+                              </div>
+                            </div>
+                      </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+
+.card{background:transparent; padding:30px 0  30px; position:relative; border:none}
+  .card .card-section{background:#fff; margin-bottom:20px; box-shadow:0px 0px 81px 0 rgba(47,47,47,0.1); transition:all .3s ease-in-out;}
+  .card .card-section-image{position:relative;overflow:hidden}
+  .card .card-section-image img{width:100%; height:300px; transition:all .3s ease-in-out;
+  transform: scale(1.06) rotate(0deg);}
+  
+  .card .card-section:hover .card-section-image img{transform:scale(1.1) rotate(4deg);}
+  
+  .card .card-section-image .card-purchase{position:absolute;text-align:right;right:0;
+  bottom:0;width:100%;
+  }
+  .card .card-section-image .card-purchase a{background:green; color:#fff; font-size:14px; text-decoration:none;
+  padding:5px 25px; display: inline-block;
+  }
+  
+  .card .card-section .card-desc{padding:10px;}
+  .card .card-section .card-desc .title h3{font-size:24px;}
+  .card .card-section .card-desc .title h3 a{color:#333; text-decoration:0;
+  }
+  .card .card-section .card-desc .card-info{display:flex; justify-content:space-between; align-items:center;padding:10px 0}
+  .card .card-section .card-desc .card-info .list-unstyle{list-style:none; padding-left:0}
+  .card .card-section .card-desc .card-info ul{margin-bottom:6px}
+  .card .card-section .card-desc .card-info ul li{color:#333; font-size:16px; margin-bottom:6px}
+  .cart_btn {
+
+    background: #333;
+    font-weight: 500;
+    border-radius: 0;
+    color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    display: inline-block;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+    margin:auto
+  }
+  .call-box {
+    width: 350px;
+    margin: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+.call-box p{
+  color:#333;
+}
+  @media (max-width: 767px){
+    .card .card-section-image img{width:100%; height:300px;}
+  }
+</style>

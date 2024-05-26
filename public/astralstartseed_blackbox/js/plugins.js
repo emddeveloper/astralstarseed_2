@@ -106,23 +106,20 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
  * Responsive Megamenu plugins
  * Copyright (c) 2018 Designing World - https://themeforest.net/user/designing-world
  */
-
-(function ($) {
-    $.fn.classyNav = function (options) {
-
+(function () {
+    function classyNav(options) {
         // Variables
-        var navContainer = $('.classy-nav-container');
-        var classy_nav = $('.classynav ul');
-        var classy_navli = $('.classynav > ul > li');
-        var navbarToggler = $('.classy-navbar-toggler');
-        var closeIcon = $('.classycloseIcon');
-        var navToggler = $('.navbarToggler');
-        var classyMenu = $('.classy-menu');
-        var var_window = $(window);
-        var closeIconMobileMenu = $('.classynav ul li');
+        var navContainer = document.querySelector('.classy-nav-container');
+        var classy_nav = document.querySelector('.classynav ul');
+        var classy_navli = document.querySelectorAll('.classynav > ul > li');
+        var navbarToggler = document.querySelector('.classy-navbar-toggler');
+        var closeIcon = document.querySelector('.classycloseIcon');
+        var navToggler = document.querySelector('.navbarToggler');
+        var classyMenu = document.querySelector('.classy-menu');
+        var closeIconMobileMenu = document.querySelectorAll('.classynav ul li');
 
-        // default options
-        var defaultOpt = $.extend({
+        // Default options
+        var defaultOpt = Object.assign({
             theme: 'light',
             breakpoint: 991,
             openCloseSpeed: 300,
@@ -133,108 +130,140 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
             stickyFooterNav: false
         }, options);
 
-        return this.each(function () {
+        // light or dark theme
+        if (defaultOpt.theme === 'light' || defaultOpt.theme === 'dark') {
+            navContainer.classList.add(defaultOpt.theme);
+        }
 
-            // light or dark theme
-            if (defaultOpt.theme === 'light' || defaultOpt.theme === 'dark') {
-                navContainer.addClass(defaultOpt.theme);
+        // open mobile menu direction 'left' or 'right' side
+        if (defaultOpt.openMobileMenu === 'left' || defaultOpt.openMobileMenu === 'right') {
+            navContainer.classList.add(defaultOpt.openMobileMenu);
+        }
+
+        // dropdown rtl
+        if (defaultOpt.dropdownRtl === true) {
+            navContainer.classList.add('dropdown-rtl');
+        }
+
+        // navbar toggler
+        navbarToggler.addEventListener('click', function () {
+            navToggler.classList.toggle('active');
+            classyMenu.classList.toggle('menu-on');
+        });
+
+        // close icon
+        closeIcon.addEventListener('click', function () {
+            classyMenu.classList.remove('menu-on');
+            navToggler.classList.remove('active');
+        });
+
+        closeIconMobileMenu.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function () {
+                classyMenu.classList.remove('menu-on');
+                navToggler.classList.remove('active');
+            });
+        });
+
+        // add dropdown & megamenu class in parent li class
+        classy_navli.forEach(function (li) {
+            if (li.querySelector('.dropdown')) {
+                li.classList.add('cn-dropdown-item');
             }
-
-            // open mobile menu direction 'left' or 'right' side
-            if (defaultOpt.openMobileMenu === 'left' || defaultOpt.openMobileMenu === 'right') {
-                navContainer.addClass(defaultOpt.openMobileMenu);
-            }
-
-            // dropdown rtl
-            if (defaultOpt.dropdownRtl === true) {
-                navContainer.addClass('dropdown-rtl');
-            }
-
-            // navbar toggler
-            navbarToggler.on('click', function () {
-                navToggler.toggleClass('active');
-                classyMenu.toggleClass('menu-on');
-            });
-
-            // close icon
-            closeIcon.on('click', function () {
-                classyMenu.removeClass('menu-on');
-                navToggler.removeClass('active');
-            });
-   
-         closeIconMobileMenu.on('click', function () {
-                classyMenu.removeClass('menu-on');
-                navToggler.removeClass('active');
-            });
-
-            // add dropdown & megamenu class in parent li class
-            classy_navli.has('.dropdown').addClass('cn-dropdown-item');
-            classy_navli.has('.megamenu').addClass('megamenu-item');
-
-            // adds toggle button to li items that have children
-            classy_nav.find('li a').each(function () {
-                if ($(this).next().length > 0) {
-                    $(this).parent('li').addClass('has-down').append('<span class="dd-trigger"></span>');
-                    $(this).parent('li').addClass('has-down').append('<span class="dd-arrow"></span>');
-                }
-            });
-
-            // expands the dropdown menu on each click
-            classy_nav.find('li .dd-trigger').on('click', function (e) {
-                e.preventDefault();
-                $(this).parent('li').children('ul').stop(true, true).slideToggle(defaultOpt.openCloseSpeed);
-                $(this).parent('li').toggleClass('active');
-            });
-
-            // add padding in dropdown & megamenu item
-            $('.megamenu-item, .cn-dropdown-item').addClass('pr12');
-            $('.megamenu-item').removeClass('has-down pr12');
-
-            // expands the megamenu on each click
-            classy_nav.find('li .dd-trigger').on('click', function (e) {
-                e.preventDefault();
-                $(this).parent('li').children('.megamenu').slideToggle(defaultOpt.openCloseSpeed);
-            });
-
-            // check browser width in real-time
-            function breakpointCheck() {
-                var windoWidth = window.innerWidth;
-                if (windoWidth <= defaultOpt.breakpoint) {
-                    navContainer.removeClass('breakpoint-off').addClass('breakpoint-on');
-                } else {
-                    navContainer.removeClass('breakpoint-on').addClass('breakpoint-off');
-                }
-            }
-
-            breakpointCheck();
-
-            var_window.on('resize', function () {
-                breakpointCheck();
-            });
-
-            // always hidden enable
-            if (defaultOpt.alwaysHidden === true) {
-                navContainer.addClass('breakpoint-on').removeClass('breakpoint-off');
-            }
-
-            // sticky
-            if (defaultOpt.stickyNav === true) {
-                var_window.on('scroll', function () {
-                    if (var_window.scrollTop() > 0) {
-                        navContainer.addClass('classy-sticky');
-                    } else {
-                        navContainer.removeClass('classy-sticky');
-                    }
-                });
-            }
-
-            // footer sticky
-            if (defaultOpt.stickyFooterNav === true) {
-                navContainer.addClass('classy-sticky-footer');
+            if (li.querySelector('.megamenu')) {
+                li.classList.add('megamenu-item');
             }
         });
-    };
-}(jQuery));
+
+        // adds toggle button to li items that have children
+        var links = classy_nav.querySelectorAll('li a');
+        links.forEach(function (link) {
+            if (link.nextElementSibling) {
+                var parentLi = link.parentElement;
+                parentLi.classList.add('has-down');
+                var ddTrigger = document.createElement('span');
+                ddTrigger.classList.add('dd-trigger');
+                parentLi.appendChild(ddTrigger);
+
+                var ddArrow = document.createElement('span');
+                ddArrow.classList.add('dd-arrow');
+                parentLi.appendChild(ddArrow);
+            }
+        });
+
+        // expands the dropdown menu on each click
+        var ddTriggers = classy_nav.querySelectorAll('.dd-trigger');
+        ddTriggers.forEach(function (trigger) {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
+                var parentLi = trigger.parentElement;
+                var submenu = parentLi.querySelector('ul');
+                if (submenu) {
+                    submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+                }
+                parentLi.classList.toggle('active');
+            });
+        });
+
+        // add padding in dropdown & megamenu item
+        var dropdownItems = document.querySelectorAll('.megamenu-item, .cn-dropdown-item');
+        dropdownItems.forEach(function (item) {
+            item.classList.add('pr12');
+        });
+        var megamenuItems = document.querySelectorAll('.megamenu-item');
+        megamenuItems.forEach(function (item) {
+            item.classList.remove('has-down', 'pr12');
+        });
+
+        // check browser width in real-time
+        function breakpointCheck() {
+            var windowWidth = window.innerWidth;
+            if (windowWidth <= defaultOpt.breakpoint) {
+                navContainer.classList.remove('breakpoint-off');
+                navContainer.classList.add('breakpoint-on');
+            } else {
+                navContainer.classList.remove('breakpoint-on');
+                navContainer.classList.add('breakpoint-off');
+            }
+        }
+
+        breakpointCheck();
+
+        window.addEventListener('resize', function () {
+            breakpointCheck();
+        });
+
+        // always hidden enable
+        if (defaultOpt.alwaysHidden === true) {
+            navContainer.classList.add('breakpoint-on');
+            navContainer.classList.remove('breakpoint-off');
+        }
+
+        // sticky
+        if (defaultOpt.stickyNav === true) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 0) {
+                    navContainer.classList.add('classy-sticky');
+                } else {
+                    navContainer.classList.remove('classy-sticky');
+                }
+            });
+        }
+
+        // footer sticky
+        if (defaultOpt.stickyFooterNav === true) {
+            navContainer.classList.add('classy-sticky-footer');
+        }
+    }
+
+    // Example of usage
+    document.addEventListener('DOMContentLoaded', function () {
+        classyNav({
+            theme: 'dark',
+            breakpoint: 768
+        });
+    });
+})();
+
 
 // :: Search Area
 // var search = document.getElementById('search'),

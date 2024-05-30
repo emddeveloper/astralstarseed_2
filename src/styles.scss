@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @media (min-width: 1200px) {
     .container {
-        max-width: 85%;
+        max-width: 85% !important;
+    }
+    .ssl-img{
+        width: 200px;
     }
 }
 

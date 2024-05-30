@@ -691,7 +691,7 @@ img {
 
   .classynav>ul>li>a {
     background-color: #f2f4f8;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgb(139 114 114 / 9%);
   }
 
   .classynav>ul>li.cn-dropdown-item.has-down>.dd-arrow,
@@ -930,7 +930,7 @@ background: linear-gradient(to bottom, #fbb28a, #e7717d); /* W3C, IE 10+/ Edge, 
 
 .dark.breakpoint-on .classynav>ul>li>a {
   text-align: justify;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgb(139 114 114 / 9%);
 }
 
 .dark.breakpoint-on .classynav ul li .megamenu .single-mega.cn-col-5,

@@ -1,6 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @media (min-width: 1200px) {
     .container {
-        max-width: 85%;
+        max-width: 85% !important;
+    }
+    .ssl-img{
+        width: 200px;
     }
 }
+
+.error-message {
+    font-style: normal;
+    font-size: 12px;
+    color: #ff3333;
+    padding-top: 0px;
+    position: absolute;
+}
+.text-success,.a-whatsapp {
+    color: #7eff20 !important;
+} 

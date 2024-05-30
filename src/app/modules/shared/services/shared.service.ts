@@ -13,13 +13,6 @@ export interface Iparams {
   providedIn: 'root',
 })
 export class SharedService {
-  public params : Iparams = {
-    "name":'',
-    "phone":'',
-    "subject":'Astralstarseed : Requested for Session Booking',
-    "message":'Please contact me ',
-    "email":''
-  }
   loader: boolean;
   sessionResponse: Object;
   constructor(private http: HttpClient) {}
@@ -34,5 +27,17 @@ export class SharedService {
       "email":email
     }
    return this.http.post('./astralstartseed_blackbox/contactform.php', sessionBookingParams);
+  }
+
+  contactUs( contactDetails : any) {
+    this.loader = true;
+    const contactUsParams : Iparams ={
+      "name": contactDetails?.name,
+      "phone":contactDetails?.phone,
+      "subject":'Astralstarseed : Query from Astralstarseed Website by '+contactDetails?.name,
+      "message": contactDetails?.message ? contactDetails?.message :'Please contact me ',
+      "email": contactDetails?.email
+    }
+   return this.http.post('./astralstartseed_blackbox/contactform.php', contactUsParams);
   }
 }

@@ -23,23 +23,24 @@ export class HeaderComponent {
     msg:"",  
   }
 
-  myForm: FormGroup;
+  bookSessionForm: FormGroup;
   isSubmitted = false;
   loader: boolean;
   constructor(private fb: FormBuilder, private sharedService : SharedService) {
-    this.myForm = this.fb.group({
+    this.bookSessionForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]]
     });
   }
 
   booksession() {
-    if (this.myForm.valid) {
-      this.sharedService.bookSession(this.myForm.value.email,this.myForm.value.phone).subscribe({
+    if (this.bookSessionForm.valid) {
+      this.sharedService.bookSession(this.bookSessionForm.value.email,this.bookSessionForm.value.phone).subscribe({
         next : (response ) => {
           this.sessionResponse = response;
           console.log(response);
           this.loader = false; // Hide loader after successful response
+          this.bookSessionForm.reset();
         },
         error : (error) => {
           this.sessionResponse = error;
@@ -49,10 +50,12 @@ export class HeaderComponent {
         complete: () => {
           // Handle completion cases
           this.loader = false; // Hide loader after error
+          this.bookSessionForm.reset();
         }
-      });;
-      console.log('Form submitted!', this.myForm.value);
+      });
+      console.log('Form submitted!', this.bookSessionForm.value);
       this.isSubmitted = true;
+      this.bookSessionForm.reset();
     }
   }
 

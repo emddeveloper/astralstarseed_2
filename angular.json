@@ -32,7 +32,9 @@
               }
             ],
             "styles": [
+              "public/astralstartseed_blackbox/style.css",
               "src/styles.scss"
+              
             ],
             "scripts": [
               "public/astralstartseed_blackbox/js/myJs.js"

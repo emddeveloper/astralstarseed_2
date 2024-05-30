@@ -10,42 +10,48 @@
                 <div class="row contains-box">
                   <div class="col-12 col-md-12">
                     <div class="contact-form">
-                      <h2 ng-show="response.mailsent" class="text-success">{{response.msg}}</h2>
-                      <h2 ng-show="response.error" class="text-danger">{{response.msg}}</h2>
-                      <div ng-show="response.mailsent || response.error">
-                      <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
-                  </div>
-                      <h2 ng-hide="response.mailsent || response.error">Get in Touch | Query From</h2>
+                      
                       <!-- Contact Form -->
-                      <form ng-hide="response.mailsent || response.error">
+                      @if(displayForm){
+                      <h2>Get in Touch | Query From</h2>
+                      <form [formGroup]="contactForm">
                         <div class="row">
                           <div class="col-12 col-md-4">
                             <div class="group">
-                              <input type="text" name="name" id="name" required ng-model="contactParams.name" />
+                              <input type="text" name="name" id="name" formControlName="name" />
                               <span class="highlight"></span>
                               <span class="bar"></span>
-                              <label>Name</label>
+                              <label>Name *</label>
+                              <div *ngIf="contactForm?.get('name')?.invalid && contactForm?.get('name')?.touched" class="error-message">
+                                Name is required
+                              </div>
                             </div>
                           </div>
                           <div class="col-12 col-md-4">
                             <div class="group">
-                              <input type="email" name="email" id="email" required ng-model="contactParams.email" />
+                              <input type="email" name="email" id="email" formControlName="email" />
                               <span class="highlight"></span>
                               <span class="bar"></span>
-                              <label>Email</label>
+                              <label>Email *</label>
+                              <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error-message">
+                                Email is required and must be valid
+                              </div>
                             </div>
                           </div>
                           <div class="col-12 col-md-4">
                             <div class="group">
-                              <input type="number" name="phone" id="phone" required ng-model="contactParams.phone" />
+                              <input type="number" name="phone" id="phone" formControlName="phone" />
                               <span class="highlight"></span>
                               <span class="bar"></span>
-                              <label>Mobile</label>
+                              <label>Mobile *</label>
+                              <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="error-message">
+                                Mobile number is required
+                              </div>
                             </div>
                           </div>
                           <div class="col-12">
                             <div class="group">
-                              <input type="text" name="subject" id="subject" required ng-model="contactParams.subject" />
+                              <input type="text" name="subject" id="subject" formControlName="subject" />
                               <span class="highlight"></span>
                               <span class="bar"></span>
                               <label>Subject</label>
@@ -53,22 +59,29 @@
                           </div>
                           <div class="col-12">
                             <div class="group">
-                              <textarea name="message" id="message" required ng-model="contactParams.message"> </textarea>
+                              <textarea name="message" id="message" formControlName="message"> </textarea>
                               <span class="highlight"></span>
                               <span class="bar"></span>
-                              <label>Message</label>
+                              <label>Message *</label>
+                              <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error-message">
+                                Message is required
+                              </div>
                             </div>
                           </div>
                           <div class="col-12">
                             
-                            <button class="btn original-btn" ng-click="submitContactForm()" ng-disabled="!(!(contactParams.name==null||contactParams.name=='') &&
-                            !(contactParams.email==null||contactParams.email=='') &&
-                            !(contactParams.phone==null||contactParams.phone=='') &&
-                            !(contactParams.subject==null||contactParams.subject=='') &&
-                            !(contactParams.message==null||contactParams.message==''))">Send Message</button>
+                            <button class="btn original-btn" (click)="onSubmit()" [disabled]="contactForm.invalid">Send Message</button>
                           </div>
                         </div>
                       </form>
+                      } @else {
+                        <div class="success-response">
+                          <h2 class="text-success">Thank you for reaching out. We have received your message and will get back to you shortly. If urgent, please contact us via Whatsapp</h2>
+                          <div>
+                          <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
+                          </div>
+                        </div>
+                      }
                     </div>
                   </div>
                 </div>

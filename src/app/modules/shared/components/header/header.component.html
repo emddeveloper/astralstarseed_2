@@ -12,9 +12,9 @@
         <div class="modal-content">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <div class="modal-body">
-            <h5 class="title" ng-hide="sessionResponse.mailsent || sessionResponse.error">Book your session.</h5>
+            <h5 class="title">Book your session.</h5>
             <h2 ng-show="sessionResponse.mailsent" class="text-success" style="font-size:15px">{{sessionResponse.msg}}</h2>
-              <h2 ng-show="sessionResponse.error" class="text-danger"  style="font-size:15px">{{sessionResponse.msg}}</h2>
+            <h2 ng-show="sessionResponse.error" class="text-danger"  style="font-size:15px">{{sessionResponse.msg}}</h2>
               <div ng-show="sessionResponse.mailsent || sessionResponse.error" class="text-center">
               <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
           </div>
@@ -24,32 +24,32 @@
               <button type="submit" class="btn original-btn" ng-click="booksession()" ng-disabled="!(!(sessionBookingParams.email==null||sessionBookingParams.email=='') &&
               !(sessionBookingParams.phone==null||sessionBookingParams.phone==''))">SUBMIT</button>
             </form> -->
-            @if( !sessionResponse?.mailsent || !sessionResponse?.error ){
-            <form [formGroup]="myForm" (ngSubmit)="booksession()" class="newsletterForm">
+            <form [formGroup]="bookSessionForm" (ngSubmit)="booksession()" class="newsletterForm">
               <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your e-mail here" required>
-                <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
-                  <div *ngIf="myForm.get('email')?.errors?.required">Email is required.</div>
-                  <div *ngIf="myForm.get('email')?.errors?.email">Invalid email format.</div>
+                <div *ngIf="bookSessionForm.get('email')?.invalid && (bookSessionForm.get('email')?.dirty || bookSessionForm.get('email')?.touched)">
+                  <div *ngIf="bookSessionForm.get('email')?.errors?.required">Email is required.</div>
+                  <div *ngIf="bookSessionForm.get('email')?.errors?.email">Invalid email format.</div>
                 </div>
               </div>
             
               <div class="form-group">
                 <label for="phone">Phone:</label>
                 <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Your mobile here" required>
-                <div *ngIf="myForm.get('phone')?.invalid && (myForm.get('phone')?.dirty || myForm.get('phone')?.touched)">
-                  <div *ngIf="myForm.get('phone')?.errors?.required">Phone number is required.</div>
+                <div *ngIf="bookSessionForm.get('phone')?.invalid && (bookSessionForm.get('phone')?.dirty || bookSessionForm.get('phone')?.touched)">
+                  <div *ngIf="bookSessionForm.get('phone')?.errors?.required">Phone number is required.</div>
                 </div>
               </div>
             
-              <button type="submit" class="btn original-btn" [disabled]="myForm.invalid">Submit</button>
-            
+              <button type="submit" class="btn original-btn" [disabled]="bookSessionForm.invalid" data-dismiss="modal" (click)="booksession()">Submit</button>
+            <!-- TODO : use this in a banner-->
               <div *ngIf="isSubmitted">
-                Form submitted successfully!
-                </div>
+                <h2>Session Booked Successfully , Our team will contact you shortly</h2>
+                <h4>If anything urgent ! Please Click on the below link, We will get a whatsapp message from you.</h4>
+                <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
+              </div>
             </form>
-          }
           </div>
         </div>
       </div>

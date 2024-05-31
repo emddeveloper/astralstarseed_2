@@ -2416,7 +2416,7 @@ a.original-logo>img {
   .logo-text {
     font-size: 28px;
     position: relative;
-    top: -15px;
+    top: 0;
     left:20px;
   }
 }

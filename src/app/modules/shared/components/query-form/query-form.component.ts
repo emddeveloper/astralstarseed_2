@@ -24,18 +24,15 @@ export class QueryFormComponent implements OnInit {
     "message": null,
     "email": null
   }
-  email1 = "astralstarseed@gmail.com";
-  email2 = "sanjukta.tarot.mail@gmail.com";
-  mobile1 = "+918420347137";
-  mobile2 = "+918420347137";
-  whatsapp1 = "+918420347137";
-
+  public contactDetails : any;
   contactForm: FormGroup;
   sessionResponse: Object;
   loader: boolean;
   displayForm : boolean = true;
 
-  constructor(private fb: FormBuilder , private sharedService : SharedService) { }
+  constructor(private fb: FormBuilder , private sharedService : SharedService) {
+    this.contactDetails = this.sharedService.getContactDetails();
+   }
   ngOnInit(): void {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],

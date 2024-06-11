@@ -37,14 +37,14 @@
               <div *ngIf="isSubmitted">
                 <h2>Session Booked Successfully , Our team will contact you shortly</h2>
                 <h4>If anything urgent ! Please Click on the below link, We will get a whatsapp message from you.</h4>
-                <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
+                <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{ contactDetails.whatsapp1 }}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Click Here</a>
               </div>
             </form>
             }@else{
               <div class="success-response">
                 <h2 class="text-success">Thank you for reaching out. We have received your message and will get back to you shortly. If urgent, please contact us via Whatsapp</h2>
                 <div>
-                <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Us Click Here</a>
+                <a title="whatsapp" class="a-whatsapp" href="https://api.whatsapp.com/send?phone={{ contactDetails.whatsapp1 }}&text=Hi I want to contact with you regarding Lightworker" target="_blank">WhatsApp Us Click Here</a>
                 </div>
               </div>
             }
@@ -86,7 +86,7 @@
                         <div class="top-social-area">
                           <a href="https://www.instagram.com/lightworkerindigo/" data-toggle="tooltip" data-placement="bottom" title="instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                           <a href="https://www.facebook.com/astralstarseed/" data-toggle="tooltip" data-placement="bottom" title="Facebook" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                          <a data-toggle="tooltip" data-placement="bottom" title="whatsapp" href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regarding Lightworker" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                          <a data-toggle="tooltip" data-placement="bottom" title="whatsapp" href="https://api.whatsapp.com/send?phone={{ contactDetails.whatsapp1 }}&text=Hi I want to contact with you regarding Lightworker" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                           <a href="https://www.facebook.com/Lightworkers-Candles-109367093844673/" target="_blank" title="Hand made fragrant natural soy wax candles"><img src="astralstartseed_blackbox/images/candle.png" class="candle-icon" /></a>
                           <a href="https://www.etsy.com/shop/LightworkersStore" data-toggle="tooltip" data-placement="bottom" title="Online Store Easy to Checkout" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
@@ -96,12 +96,12 @@
                         <div class="contact-text-box row">
                           <dl>
                             <dt>Mobile</dt>
-                            <dd>:&nbsp; <a href="tel:{{mobile1}}">{{mobile1}}</a></dd>
+                            <dd>:&nbsp; <a href="tel:{{ contactDetails.mobile1}}">{{ contactDetails.mobile1}}</a></dd>
                             <!-- <dt>Whatsapp</dt>
-                                                      <dd>:&nbsp; <a href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi I want to contact with you regurding Lightworker"
-                                                              target="_blank">{{whatsapp1}}</a></dd> -->
+                                                      <dd>:&nbsp; <a href="https://api.whatsapp.com/send?phone={{ contactDetails.whatsapp1 }}&text=Hi I want to contact with you regurding Lightworker"
+                                                              target="_blank">{{ contactDetails.whatsapp1 }}</a></dd> -->
                             <dt>Email</dt>
-                            <dd>:&nbsp;&nbsp;<a href="mailto:{{email1}}?Subject=Hello%20I%20Want%20To%20Conatct%20With%20You" target="_top">{{email1}}</a></dd>
+                            <dd>:&nbsp;&nbsp;<a href="mailto:{{ contactDetails.email1}}?Subject=Hello%20I%20Want%20To%20Conatct%20With%20You" target="_top">{{ contactDetails.email1}}</a></dd>
                           </dl>
                         </div>
                       </div>

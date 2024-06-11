@@ -40,9 +40,9 @@
 
                         <p class="text-justify w-text">Just click the email link it will allow you to send an email to us. `Hi Lightworkers Team I want to contact with you regurding my payments details`. Please mention your name and mobile number with this mail.</p>
 
-                        <p class="payment-email"><a href="mailto:{{email1}}?Subject=Payment%20Confirmation%20Details%20Lightworkers"
+                        <p class="payment-email"><a href="mailto:{{ contactDetails.email1}}?Subject=Payment%20Confirmation%20Details%20Lightworkers"
 
-                            target="_top" class="">{{email1}}</a></p>
+                            target="_top" class="">{{ contactDetails.email1}}</a></p>
 
                             <hr>
 
@@ -50,7 +50,7 @@
 
                         <p class="payment-email">Confirm via Call:<br>
 
-                            <a href="tel:{{mobile1}}">{{mobile1}}</a>
+                            <a href="tel:{{ contactDetails.mobile1}}">{{ contactDetails.mobile1}}</a>
 
                             
 
@@ -64,7 +64,7 @@
 
                         
 
-                            Click on this <a href="https://api.whatsapp.com/send?phone={{whatsapp1}}&text=Hi Lightworkers Team I want to contact with you regarding my payments details" target="_blank">{{whatsapp1}}</a> number to confirm your payment details via Whatsapp.
+                            Click on this <a href="https://api.whatsapp.com/send?phone={{ contactDetails.whatsapp1 }}&text=Hi Lightworkers Team I want to contact with you regarding my payments details" target="_blank">{{ contactDetails.whatsapp1 }}</a> number to confirm your payment details via Whatsapp.
 
                         </p>
 

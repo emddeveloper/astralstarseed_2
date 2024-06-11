@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-vaastu',
@@ -8,9 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './vaastu.component.scss'
 })
 export class VaastuComponent {
-  email1="astralstarseed@gmail.com";
-  email2="sanjukta.tarot.mail@gmail.com";
-  mobile1="+918420347137";
-  mobile2="+918420347137";
-  whatsapp1="+918420347137";
+  public contactDetails : any;
+  constructor(private sharedService : SharedService){
+   this.contactDetails = this.sharedService.getContactDetails();
+  }
 }

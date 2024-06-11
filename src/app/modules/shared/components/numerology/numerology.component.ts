@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-numerology',
@@ -8,9 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './numerology.component.scss'
 })
 export class NumerologyComponent {
-  email1="astralstarseed@gmail.com";
-  email2="sanjukta.tarot.mail@gmail.com";
-  mobile1="+918420347137";
-  mobile2="+918420347137";
-  whatsapp1="+918420347137";
+  public contactDetails : any;
+  constructor(private sharedService : SharedService){
+   this.contactDetails = this.sharedService.getContactDetails();
+  }
 }

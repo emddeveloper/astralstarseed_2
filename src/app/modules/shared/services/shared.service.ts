@@ -16,6 +16,16 @@ export class SharedService {
   loader: boolean;
   sessionResponse: Object;
   constructor(private http: HttpClient) {}
+
+  getContactDetails(){
+    return {
+      email1:"astralstarseed@gmail.com",
+      email2:"sanjukta.tarot.mail@gmail.com",
+      mobile1:"+918420347137",
+      mobile2:"+918420347137",
+      whatsapp1:"+918420347137"
+    }
+  }
   
   bookSession( email: any,phone: any) {
     this.loader = true;

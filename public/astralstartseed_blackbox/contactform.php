@@ -33,7 +33,8 @@ $email_content_sender .= "<p>Best regards,<br>astralstarseed.com</p>";
 $email_content_sender .= "</body></html>";
 
 // Set the recipient email address
-$to = 'emd.developer@gmail.com';
+//$to = 'emd.developer@gmail.com';
+$to = 'astralstarseed@gmail.com';
 
 // Set the email headers for recipient
 $headers_recipient = "MIME-Version: 1.0" . "\r\n";

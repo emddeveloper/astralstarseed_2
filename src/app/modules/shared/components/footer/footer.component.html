@@ -34,15 +34,15 @@
                 <a href="https://www.etsy.com/shop/LightworkersStore" data-toggle="tooltip" data-placement="bottom" title="Online Store Easy to Checkout" target="_blank"><i class="fa fa-angle-double-right"></i> How to Buy</a>
               </li>
               <li>
-                <a href="payment" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> How to Pay</a>
+                <a routerLink="payment" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> How to Pay</a>
               </li>
-              <!-- <li><a href="#!faq" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i>
+              <!-- <li><a href="#!faq" title="" (click)="top()"><i class="fa fa-angle-double-right"></i>
                                   FAQ's</a></li> -->
               <li>
-                <a href="contact-us" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Contact Us</a>
+                <a routerLink="contact" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Contact Us</a>
               </li>
               <li>
-                <a href="aboutus" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> About Us</a>
+                <a routerLink="aboutus" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> About Us</a>
               </li>
             </ul>
           </div>
@@ -56,16 +56,16 @@
                 <a href="https://www.etsy.com/shop/LightworkersStore" data-toggle="tooltip" data-placement="bottom" title="Online Store Easy to Checkout" target="_blank"><i class="fa fa-angle-double-right"></i> eStore</a>
               </li>
               <li>
-                <a href="tarot" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Tarot</a>
+                <a routerLink="tarot" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Tarot</a>
               </li>
               <li>
-                <a href="reiki" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Reiki</a>
+                <a routerLink="reiki" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Reiki</a>
               </li>
               <li>
-                <a href="runes" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Runes</a>
+                <a routerLink="numerology" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Numerology</a>
               </li>
               <li>
-                <a href="angel" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Angel Therapy</a>
+                <a routerLink="switchwords" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Switchwords</a>
               </li>
             </ul>
           </div>
@@ -75,17 +75,17 @@
           <div class="footer-info-single">
             <h2 class="title">Security & privacy</h2>
             <ul class="list-unstyled">
-              <!-- <li><a href="#!commingsoon" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i>
+              <!-- <li><a href="#!commingsoon" title="" (click)="top()"><i class="fa fa-angle-double-right"></i>
                                   Terms Of Use</a></li>
-                          <li><a href="#!commingsoon" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i>
+                          <li><a href="#!commingsoon" title="" (click)="top()"><i class="fa fa-angle-double-right"></i>
                                   Privacy Policy</a></li> -->
               <li>
-                <a href="refund" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i> Return / Refund Policy</a>
+                <a routerLink="payment" title="" (click)="top()"><i class="fa fa-angle-double-right"></i> Return / Refund Policy</a>
               </li>
               <li>
                 <a href="https://www.etsy.com/shop/LightworkersStore" data-toggle="tooltip" data-placement="bottom" title="Online Store Easy to Checkout" target="_blank"><i class="fa fa-angle-double-right"></i> e-commerce link</a>
               </li>
-              <!-- <li><a href="#!" title="" ng-click="top()"><i class="fa fa-angle-double-right"></i>
+              <!-- <li><a href="#!" title="" (click)="top()"><i class="fa fa-angle-double-right"></i>
                                   Store Locations</a></li> -->
             </ul>
             <span id="siteseal"><img src="./astralstartseed_blackbox/images/ssl.png" alt="ssl png" class="ssl-img"></span>
@@ -95,7 +95,7 @@
         <div class="col-md-3 col-sm-6">
           <div class="footer-info-single">
             <h2 class="title">Payment</h2>
-            <p>You can make payments by using Online Transfer or via UPI payments. <a href="payment" class="a-link" ng-click="top()">Click here </a>for payments.</p>
+            <p>You can make payments by using Online Transfer or via UPI payments. <a routerLink="payment" class="a-link" (click)="top()">Click here </a>for payments.</p>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <p>Copyright © 2018. LightWorkers.</p>
+            <p>Copyright © {{ currentYear }}. LightWorkers.</p>
           </div>
           <div class="col-sm-6">
             <p>Developed and Maintained by <a href="mailto:emd.developer@gmail.com?Subject=Hello%20I%20Want%20To%20Conatct%20With%20You" target="_top" style="color: #1abc9c">EMD-Developers</a></p>
@@ -113,5 +113,5 @@
         </div>
       </div>
     </section>
-    <a href="https://www.verytraffic.com/?ref=80950" style="display: none">Cheap Website Traffic</a>
+     <a href="https://www.verytraffic.com/?ref=80950" style="display: none">Cheap Website Traffic</a>
   </footer>

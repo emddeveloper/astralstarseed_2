@@ -41,7 +41,11 @@
 } 
 
 .gradient-background {
-    background-image: linear-gradient(to right, #f38e63, #38b493, #ecdb38, #d562b7);
+    background-image: linear-gradient(to right, #cb9b51 22%, 
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,);
     animation: gradient-animation 1s ease-in-out infinite;
   }
   
@@ -58,7 +62,9 @@
   }
 
   .gradient-text {
-    background-image: linear-gradient(to right, #f38e63, #38b493, #ecdb38, #d562b7);
+    background-image: linear-gradient(to right,#f5e38b 45%,
+    #f6f2c0 50%,
+    #f5e38b 55%,);
     -webkit-background-clip: text; /* Necessary for WebKit browsers */
     -webkit-text-fill-color: transparent; /* Makes text transparent */
     color: #fff; /* Optional: Fallback color for non-supporting browsers */

@@ -2139,7 +2139,7 @@ textarea:focus~.highlight {
 .top-social-area a {
   font-size: 25px;
   margin-right: 20px;
-  color:#09b593;
+  color:#56c700;
 }
 
 dt {
@@ -2473,7 +2473,7 @@ div#stickyNav-sticky-wrapper.sticky-wrapper.is-sticky{
 /*footer css starts here*/
 footer.nb-footer {
   background: #222;
-  border-top: 4px solid #b78c33;
+  border-top: 4px solid #fdef75;
 }
 
 footer.nb-footer .about {
@@ -2500,8 +2500,8 @@ footer.nb-footer .about .social-media ul li a {
   line-height: 45px;
   border-radius: 50%;
   font-size: 16px;
-  color: #b78c33;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fdef75;
+  border: 1px solid #fdef75;
 }
 
 footer.nb-footer .about .social-media ul li a:hover {
@@ -2518,7 +2518,7 @@ footer.nb-footer .footer-info-single .title {
   color: #aaa;
   text-transform: uppercase;
   font-size: 16px;
-  border-left: 4px solid #b78c33;
+  border-left: 4px solid #fdef75;
   padding-left: 5px;
 }
 

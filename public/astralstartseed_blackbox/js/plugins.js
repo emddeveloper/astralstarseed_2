@@ -164,6 +164,13 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
             });
         });
 
+        document.addEventListener('click', function(event) {
+            if (!classyMenu.contains(event.target) && !navToggler.contains(event.target)) {
+                classyMenu.classList.remove('menu-on');
+                navToggler.classList.remove('active');
+            }
+        });
+
         // add dropdown & megamenu class in parent li class
         classy_navli.forEach(function (li) {
             if (li.querySelector('.dropdown')) {

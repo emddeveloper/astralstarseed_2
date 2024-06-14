@@ -6,6 +6,7 @@ import { HeaderComponent } from './modules/shared/components/header/header.compo
 import { FooterComponent } from './modules/shared/components/footer/footer.component';
 import { TestimonialComponent } from './modules/shared/components/testimonial/testimonial.component';
 import { QueryFormComponent } from './modules/shared/components/query-form/query-form.component';
+import { SharedService } from './modules/shared/services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +25,8 @@ import { QueryFormComponent } from './modules/shared/components/query-form/query
 })
 export class AppComponent {
   title = 'astralstarseed';
+  public contactDetails : any;
+  constructor(private sharedService : SharedService){
+    this.contactDetails = sharedService.getContactDetails();
+  }
 }

@@ -14,6 +14,9 @@ import { AboutusComponent } from './modules/shared/components/aboutus/aboutus.co
 import { ContactComponent } from './modules/shared/components/contact/contact.component';
 import { PaymentComponent } from './modules/shared/components/payment/payment.component';
 import { PriceComponent } from './modules/shared/components/price/price.component';
+import { ScientificLogoDesignComponent } from './modules/shared/components/scientific-logo-design/scientific-logo-design.component';
+import { LogoPackagesComponent } from './modules/shared/components/logo-packages/logo-packages.component';
+import { SignatureAnalysisComponent } from './modules/shared/components/signature-analysis/signature-analysis.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -32,4 +35,7 @@ export const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'price', component:PriceComponent  },
     { path: 'payment', component: PaymentComponent },
+    { path: 'scientificLogoDesign', component: ScientificLogoDesignComponent },
+    { path: 'logoPackages', component: LogoPackagesComponent },
+    { path: 'signatureAnalysis', component: SignatureAnalysisComponent },
 ];

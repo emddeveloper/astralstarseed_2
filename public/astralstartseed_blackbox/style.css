@@ -2256,7 +2256,8 @@ h2::after {
   background: rgba(241, 241, 241, 0.1803921568627451);
   border-radius: 3px;
   margin-bottom: 15px;
-  text-align: left;
+  font-size: 14px;
+  text-align: justify;
 }
 
 .carousel .testimonial::after {
@@ -2456,7 +2457,7 @@ div#stickyNav-sticky-wrapper.sticky-wrapper.is-sticky{
 
 @media only screen and (min-width: 768px) {
   .carousel .testimonial {
-    height: 150px;
+    min-height :260px;
     overflow-y: hidden;
     padding-bottom: 20px;
 }

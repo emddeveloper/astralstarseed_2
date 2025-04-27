@@ -1,487 +1,41 @@
- <!-- testimonial starts -->
- <div class="section-padding-20-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="row text-center mb-20 color-3">
-            <div class="single-blog-content">
-              <div class="line"></div>
-              <div class="container-fluid">
-                <div class="row testimonial-box">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-sm-12 col-xs-12">
-                        <h2><b>Testimonials</b></h2>
-                        <!-- If any changes reguired for carausel then please change for Desktop and Mobile also here 2 carousel used -->
-                        <!-- carousel items Desktop and Ipad -->
-                        <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
-                          <!-- Carousel indicators -->
-                          <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                          </ol>
-
-                          <div class="carousel-inner">
-                            <div class="item carousel-item active">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata1}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b> Sandhya </b></div>
-                                          <div class="details">Bangalore</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
+<!-- testimonial starts -->
+<div class="section-padding-20-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row text-center mb-20 color-3">
+          <div class="single-blog-content">
+            <div class="line"></div>
+            <div class="container-fluid">
+              <div class="row testimonial-box">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                      <h2><b>Testimonials</b></h2>
+                      <!-- Carousel for Desktop and Tablet -->
+                      <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                          <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarousel"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div *ngFor="let testimonial of testimonialData.data; let i = index" class="item carousel-item" [class.active]="i === 0">
+                            <div class="row">
+                              <div class="col-md-6" *ngFor="let half of [0, 1]">
+                                <div class="testimonial-wrapper" *ngIf="testimonialData.data[i + half]">
+                                  <div class="testimonial">{{testimonialData.data[i + half].text}}</div>
+                                  <div class="media">
+                                    <div class="media-left d-flex mr-3">
+                                      <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata2}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Zainab </b></div>
-                                          <div class="details">United Kingdom</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata3}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Niharika </b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata4}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b> Arun </b></div>
-                                          <div class="details">Australia</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata5}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Yasmin</b></div>
-                                          <div class="details">Dubai</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata6}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Rishi</b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div> 
-                            <div class="item carousel-item">
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata7}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Arun</b></div>
-                                          <div class="details">Australia</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata8}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Rohini</b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>  
-                          </div>
-                        </div>
-                        <!-- carousel items Mobile and tabs -->
-                        <div id="myCarousel" class="carousel slide d-block d-sm-block d-md-none" data-ride="carousel">
-                          <!-- Carousel indicators -->
-                          <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                            <li data-target="#myCarousel" data-slide-to="4"></li>
-                            <li data-target="#myCarousel" data-slide-to="5"></li>
-                            <li data-target="#myCarousel" data-slide-to="6"></li>
-                            <li data-target="#myCarousel" data-slide-to="7"></li>
-                          </ol>
-                          <!-- Wrapper for carousel items MOBILE TABs -->
-                          <div class="carousel-inner d-block d-sm-block d-md-none">
-                            <div class="item carousel-item 1 active">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial" [innerHTML]="tdata1"></div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b> Sandhya </b></div>
-                                          <div class="details">Bangalore</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 2">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata2}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                         <div class="name"><b>Zainab </b></div>
-                                          <div class="details">United Kingdom</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 3">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata3}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Niharika </b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 4">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata4}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b> Arun </b></div>
-                                          <div class="details">Australia</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 5">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata5}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Yasmin</b></div>
-                                          <div class="details">Dubai</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 6">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata6}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Rishi </b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 7">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata7}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Arun </b></div>
-                                          <div class="details">Australia</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="item carousel-item 8">
-                              <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="testimonial-wrapper">
-                                    <div class="testimonial">{{tdata8}}</div>
-                                    <div class="media">
-                                      <div class="media-left d-flex mr-3">
-                                        <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
-                                      </div>
-                                      <div class="media-body">
-                                        <div class="overview">
-                                          <div class="name"><b>Rohini </b></div>
-                                          <div class="details">Kolkata</div>
-                                          <div class="star-rating">
-                                            <ul class="list-inline">
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                          </div>
+                                    <div class="media-body">
+                                      <div class="overview">
+                                        <div class="name"><b>{{testimonialData.data[i + half].user}}</b></div>
+                                        <div class="details">{{testimonialData.data[i + half].address}}</div>
+                                        <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item" *ngFor="let star of [1, 2, 3, 4, 5]"><i class="fa fa-star"></i></li>
+                                          </ul>
                                         </div>
                                       </div>
                                     </div>
@@ -492,6 +46,41 @@
                           </div>
                         </div>
                       </div>
+                      <!-- Carousel for Mobile -->
+                      <div id="myCarouselMobile" class="carousel slide d-block d-sm-block d-md-none" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                          <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarouselMobile"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div *ngFor="let testimonial of testimonialData.data; let i = index" class="item carousel-item" [class.active]="i === 0">
+                            <div class="row">
+                              <div class="col-xs-12">
+                                <div class="testimonial-wrapper">
+                                  <div class="testimonial">{{testimonial.text}}</div>
+                                  <div class="media">
+                                    <div class="media-left d-flex mr-3">
+                                      <!--<img src="astralstartseed_blackbox/images/tuser.png" alt="" /> -->
+                                    </div>
+                                    <div class="media-body">
+                                      <div class="overview">
+                                        <div class="name"><b>{{testimonial.user}}</b></div>
+                                        <div class="details">{{testimonial.address}}</div>
+                                        <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item" *ngFor="let star of [1, 2, 3, 4, 5]"><i class="fa fa-star"></i></li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- End of Carousel -->
                     </div>
                   </div>
                 </div>
@@ -502,4 +91,5 @@
       </div>
     </div>
   </div>
-  <!-- testimonial closed -->
+</div>
+<!-- testimonial closed -->

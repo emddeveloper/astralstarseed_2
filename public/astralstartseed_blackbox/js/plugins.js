@@ -266,7 +266,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
     document.addEventListener('DOMContentLoaded', function () {
         classyNav({
             theme: 'dark',
-            breakpoint: 768
+            breakpoint: 991
         });
     });
 })();

@@ -2003,7 +2003,7 @@ textarea:focus~.highlight {
   border-bottom: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .coming-soon-area .header-area .logo-area {
     padding: 80px 0 50px 0;
   }
@@ -2348,7 +2348,7 @@ a.original-logo>img {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {}
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .m-line{
     font-size: 14px;
     text-shadow: 1px 2px 1px #040504;
@@ -2382,7 +2382,7 @@ a.original-logo>img {
     font-size: 12px;
     font-weight: normal;
   }
-  .header-area .original-nav-area .classynav ul li a.active {
+  .header-area .original-nav-area .classynav ul li a.active,  .header-area .original-nav-area .classynav ul li a:hover {
     color: var(--white) !important;
     font-weight: 500 !important;
     background: #343a40 !important;
@@ -2442,7 +2442,7 @@ div#stickyNav-sticky-wrapper.sticky-wrapper.is-sticky{
 .section-padding-20-0{
   padding:20px 0;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .single-blog-content p{
     font-size: 15px;
   }
@@ -2461,9 +2461,7 @@ div#stickyNav-sticky-wrapper.sticky-wrapper.is-sticky{
     overflow-y: hidden;
     padding-bottom: 20px;
 }
-.hello-mobile{
-  display: none;
-}
+
 }
 
 .r-background{
@@ -2638,4 +2636,9 @@ span.navbarToggler.active {
 }
 .classycloseIcon .cross-wrap {
   opacity: 0;
+}
+@media only screen and (min-width: 992px){
+  .hello-mobile{
+    display: none;
+  }
 }

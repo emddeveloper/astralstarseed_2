@@ -17,6 +17,9 @@ import { PriceComponent } from './modules/shared/components/price/price.componen
 import { ScientificLogoDesignComponent } from './modules/shared/components/scientific-logo-design/scientific-logo-design.component';
 import { LogoPackagesComponent } from './modules/shared/components/logo-packages/logo-packages.component';
 import { SignatureAnalysisComponent } from './modules/shared/components/signature-analysis/signature-analysis.component';
+import { FaceReadingSamudrikShastraComponent } from './modules/shared/components/face-reading-samudrik-shastra/face-reading-samudrik-shastra.component';
+import { PalmistryComponent } from './modules/shared/components/palmistry/palmistry.component';
+import { ChakraHhealingBalancingComponent } from './modules/shared/components/chakra-hhealing-balancing/chakra-hhealing-balancing.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,4 +41,7 @@ export const routes: Routes = [
     { path: 'scientificLogoDesign', component: ScientificLogoDesignComponent },
     { path: 'logoPackages', component: LogoPackagesComponent },
     { path: 'signatureAnalysis', component: SignatureAnalysisComponent },
+    { path: 'face-reading-samudrik-shastra', component: FaceReadingSamudrikShastraComponent },
+    { path: 'palmistry', component: PalmistryComponent },
+    { path: 'chakra-healing', component: ChakraHhealingBalancingComponent },
 ];

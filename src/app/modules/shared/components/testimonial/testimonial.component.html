@@ -13,7 +13,7 @@
                     <div class="col-sm-12 col-xs-12">
                       <h2><b>Testimonials</b></h2>
                       <!-- Carousel for Desktop and Tablet -->
-                      <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel">
+                      <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel" data-interval="false">
                         <!-- Carousel indicators -->
                         <ol class="carousel-indicators">
                           <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarousel"></li>
@@ -47,7 +47,7 @@
                         </div>
                       </div>
                       <!-- Carousel for Mobile -->
-                      <div id="myCarouselMobile" class="carousel slide d-block d-sm-block d-md-none" data-ride="carousel">
+                      <div id="myCarouselMobile" class="carousel slide d-block d-sm-block d-md-none" data-ride="carousel" data-interval="false">
                         <!-- Carousel indicators -->
                         <ol class="carousel-indicators">
                           <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarouselMobile"></li>

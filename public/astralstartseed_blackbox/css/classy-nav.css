@@ -736,9 +736,7 @@ img {
   display: block;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #e7717d;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #fbb28a, #e7717d);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #fbb28a, #e7717d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #ff0;  /* fallback for old browsers */
 
 }
 
@@ -921,7 +919,7 @@ background: linear-gradient(to bottom, #fbb28a, #e7717d); /* W3C, IE 10+/ Edge, 
 }
 
 .dark.breakpoint-on .classy-navbar .classy-menu {
-  background-color: #192a56;
+  background-color: #ff0 !important;
 }
 
 .dark .classycloseIcon .cross-wrap span {

@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 margin: 30,
                 loop: true,
                 center: true,
-                autoplay: true,
+                autoplay: false,
                 nav: true,
                 navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-                autoplayTimeout: 5000, // Autoplay Timeout 1s = 1000ms
+                autoplayTimeout: 50000, // Autoplay Timeout 1s = 1000ms
                 smartSpeed: 2000
             });
 

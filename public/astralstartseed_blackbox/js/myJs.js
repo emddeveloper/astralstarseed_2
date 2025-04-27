@@ -50,10 +50,10 @@ gtag("config", "AW-719616800")
 
 // <!-- Global site tag (gtag.js) - Google Ads: 719616800 -->
 
-$("#myCarousel").carousel({
-    interval: 5000,
-    cycle: true,
-    pause: "hover",
-    autoplayHoverPause: true,
-    nav: true
-  })
+// $("#myCarousel").carousel({
+//     interval: 5000,
+//     cycle: true,
+//     pause: "hover",
+//     autoplayHoverPause: true,
+//     nav: true
+//   })

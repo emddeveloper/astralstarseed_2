@@ -41,11 +41,8 @@
 } 
 
 .gradient-background {
-    background-image: linear-gradient(to right, #cb9b51 22%, 
-    #f6e27a 45%,
-    #f6f2c0 50%,
-    #f6e27a 55%,
-    #cb9b51 78%,);
+    background:#ff0; /* Fallback color for non-supporting browsers */
+    background: linear-gradient(45deg, #ff0, #00ffff); /* Gradient color */
     animation: gradient-animation 1s ease-in-out infinite;
   }
   
@@ -62,9 +59,8 @@
   }
 
   .gradient-text {
-    background-image: linear-gradient(to right,#f5e38b 45%,
-    #f6f2c0 50%,
-    #f5e38b 55%,);
+    background: #ff0; /* Fallback color for non-supporting browsers */
+    background: linear-gradient(45deg, #ff0, #00ffff); /* Gradient color */
     -webkit-background-clip: text; /* Necessary for WebKit browsers */
     -webkit-text-fill-color: transparent; /* Makes text transparent */
     color: #fff; /* Optional: Fallback color for non-supporting browsers */
@@ -86,7 +82,7 @@
 .header-title {
   margin: 0;
   font-size: 20px;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
       font-size: 20px;
      }
 }

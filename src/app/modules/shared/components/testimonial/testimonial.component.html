@@ -15,9 +15,9 @@
                       <!-- Carousel for Desktop and Tablet -->
                       <div id="myCarousel" class="carousel slide d-none d-sm-none d-md-block" data-ride="carousel" data-interval="false">
                         <!-- Carousel indicators -->
-                        <ol class="carousel-indicators">
+                        <!-- <ol class="carousel-indicators">
                           <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarousel"></li>
-                        </ol>
+                        </ol> -->
                         <div class="carousel-inner">
                           <div *ngFor="let testimonial of testimonialData.data; let i = index" class="item carousel-item" [class.active]="i === 0">
                             <div class="row">
@@ -58,9 +58,9 @@
                       <!-- Carousel for Mobile -->
                       <div id="myCarouselMobile" class="carousel slide d-block d-sm-block d-md-none" data-ride="carousel" data-interval="false">
                         <!-- Carousel indicators -->
-                        <ol class="carousel-indicators">
+                        <!-- <ol class="carousel-indicators">
                           <li *ngFor="let testimonial of testimonialData.data; let i = index" [class.active]="i === 0" [attr.data-slide-to]="i" data-target="#myCarouselMobile"></li>
-                        </ol>
+                        </ol> -->
                         <div class="carousel-inner">
                           <div *ngFor="let testimonial of testimonialData.data; let i = index" class="item carousel-item" [class.active]="i === 0">
                             <div class="row">
@@ -108,6 +108,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="text-center mt-3">
+  <button class="btn btn-primary testimonial-btn" (click)="goToTestimonials()">More Testimonials</button>
   </div>
 </div>
 <!-- testimonial closed -->

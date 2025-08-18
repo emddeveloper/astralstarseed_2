@@ -20,6 +20,7 @@ import { SignatureAnalysisComponent } from './modules/shared/components/signatur
 import { FaceReadingSamudrikShastraComponent } from './modules/shared/components/face-reading-samudrik-shastra/face-reading-samudrik-shastra.component';
 import { PalmistryComponent } from './modules/shared/components/palmistry/palmistry.component';
 import { ChakraHhealingBalancingComponent } from './modules/shared/components/chakra-hhealing-balancing/chakra-hhealing-balancing.component';
+import { AllTestimonialsComponent } from './modules/shared/components/all-testimonials/all-testimonials.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -44,4 +45,5 @@ export const routes: Routes = [
     { path: 'face-reading-samudrik-shastra', component: FaceReadingSamudrikShastraComponent },
     { path: 'palmistry', component: PalmistryComponent },
     { path: 'chakra-healing', component: ChakraHhealingBalancingComponent },
+    { path: 'testimonials', component: AllTestimonialsComponent }
 ];

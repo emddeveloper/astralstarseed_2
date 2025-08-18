@@ -1,0 +1,16 @@
+<div class="container py-4">
+  <h2 class="text-center mb-4"><b>All Testimonials</b></h2>
+  <div class="row">
+    <div class="col-md-6 col-lg-4 mb-4" *ngFor="let testimonial of testimonialData.data">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="testimonial-text">{{testimonial.text}}</p>
+          <div class="overview mt-3">
+            <div class="name"><b>{{testimonial.user}}</b></div>
+            <div class="details">{{testimonial.address}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
